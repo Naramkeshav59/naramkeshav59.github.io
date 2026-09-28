@@ -677,7 +677,9 @@ function Scene({ input, visible, thwips }) {
   );
 
   useFrame(({ clock }, delta) => {
+    // Stay hidden (and pulled up) until the model has loaded, then drop in.
     const rig = rigRef.current;
+    anchor.current.visible = !!rig;
     if (!rig) return;
     const t = clock.elapsedTime;
     const s = state.current;
@@ -781,6 +783,7 @@ function Scene({ input, visible, thwips }) {
     }
   });
 
+  // The built-in figure is only used if the downloaded model fails to load.
   const fallback = <ProceduralFigure rigRef={rigRef} />;
 
   return (
@@ -800,7 +803,7 @@ function Scene({ input, visible, thwips }) {
 
           <group ref={body}>
             <FallbackOnError fallback={fallback}>
-              <Suspense fallback={fallback}>
+              <Suspense fallback={null}>
                 <ModelFigure rigRef={rigRef} />
               </Suspense>
             </FallbackOnError>
