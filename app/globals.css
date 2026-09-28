@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Syntax highlighting for code blocks */
+@layer base {
+  pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+  }
+  
+  code.hljs {
+    padding: 3px 5px;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Code syntax highlighting */
+@layer base {
+  .prose pre {
+    @apply bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto;
+  }
+  
+  .prose code {
+    @apply text-sm;
+  }
+  
+  .prose pre code {
+    @apply bg-transparent text-gray-100;
+  }
+}
+
+/* Dark mode prose styles */
+.prose-invert {
+  --tw-prose-body: rgb(209 213 219);
+  --tw-prose-headings: rgb(255 255 255);
+  --tw-prose-links: rgb(96 165 250);
+  --tw-prose-bold: rgb(255 255 255);
+  --tw-prose-code: rgb(147 197 253);
+  --tw-prose-pre-bg: rgb(17 24 39);
+}
+/* "THWIP!" pop when a web is fired */
+.spidey-thwip-label {
+  display: inline-block;
+  opacity: 0;
+  font-family: var(--font-comic), Impact, "Arial Black", sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  color: #facc15;
+  -webkit-text-stroke: 1px #0a1026;
+  text-shadow: 2px 2px 0 #0a1026;
+  white-space: nowrap;
+}
+.spidey-thwip-3d {
+  animation: spidey-thwip 550ms ease-out both;
+}
+@keyframes spidey-thwip {
+  0% { transform: translateY(-18px) scale(0.3) rotate(-12deg); opacity: 0; }
+  30% { transform: translateY(-24px) scale(1.15) rotate(-8deg); opacity: 1; }
+  100% { transform: translateY(-38px) scale(1) rotate(-8deg); opacity: 0; }
+}
+
+/* Spider-web backdrop anchored to the top-left corner */
+.spidey-web-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='620' height='620'%3E%3Cpath d='M0 0L620 0M0 0L608 121M0 0L573 237M0 0L516 344M0 0L438 438M0 0L344 516M0 0L237 573M0 0L121 608M0 0L0 620M90 0Q81 8 88 18Q78 24 83 34Q71 38 75 50Q63 51 64 64Q51 63 50 75Q38 71 34 83Q24 78 18 88Q8 81 0 90M170 0Q152 15 167 33Q146 44 157 65Q135 72 141 94Q118 97 120 120Q97 118 94 141Q72 135 65 157Q44 146 33 167Q15 152 0 170M250 0Q224 22 245 49Q215 65 231 96Q198 106 208 139Q174 143 177 177Q143 174 139 208Q106 198 96 231Q65 215 49 245Q22 224 0 250M330 0Q296 29 324 64Q284 86 305 126Q262 140 274 183Q230 188 233 233Q188 230 183 274Q140 262 126 305Q86 284 64 324Q29 296 0 330M410 0Q367 36 402 80Q353 107 379 157Q325 174 341 228Q285 234 290 290Q234 285 228 341Q174 325 157 379Q107 353 80 402Q36 367 0 410M490 0Q439 43 481 96Q422 128 453 188Q389 208 407 272Q341 280 346 346Q280 341 272 407Q208 389 188 453Q128 422 96 481Q43 439 0 490M570 0Q511 50 559 111Q491 149 527 218Q452 242 474 317Q397 325 403 403Q325 397 317 474Q242 452 218 527Q149 491 111 559Q50 511 0 570' fill='none' stroke='rgba(10,16,38,0.10)' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: min(620px, 70vw);
+}
+.dark .spidey-web-bg,
+.spidey-web-bg.dark {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='620' height='620'%3E%3Cpath d='M0 0L620 0M0 0L608 121M0 0L573 237M0 0L516 344M0 0L438 438M0 0L344 516M0 0L237 573M0 0L121 608M0 0L0 620M90 0Q81 8 88 18Q78 24 83 34Q71 38 75 50Q63 51 64 64Q51 63 50 75Q38 71 34 83Q24 78 18 88Q8 81 0 90M170 0Q152 15 167 33Q146 44 157 65Q135 72 141 94Q118 97 120 120Q97 118 94 141Q72 135 65 157Q44 146 33 167Q15 152 0 170M250 0Q224 22 245 49Q215 65 231 96Q198 106 208 139Q174 143 177 177Q143 174 139 208Q106 198 96 231Q65 215 49 245Q22 224 0 250M330 0Q296 29 324 64Q284 86 305 126Q262 140 274 183Q230 188 233 233Q188 230 183 274Q140 262 126 305Q86 284 64 324Q29 296 0 330M410 0Q367 36 402 80Q353 107 379 157Q325 174 341 228Q285 234 290 290Q234 285 228 341Q174 325 157 379Q107 353 80 402Q36 367 0 410M490 0Q439 43 481 96Q422 128 453 188Q389 208 407 272Q341 280 346 346Q280 341 272 407Q208 389 188 453Q128 422 96 481Q43 439 0 490M570 0Q511 50 559 111Q491 149 527 218Q452 242 474 317Q397 325 403 403Q325 397 317 474Q242 452 218 527Q149 491 111 559Q50 511 0 570' fill='none' stroke='rgba(232,236,245,0.07)' stroke-width='1.2'/%3E%3C/svg%3E");
+}
