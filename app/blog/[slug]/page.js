@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 
-// Pre-render every post at build time (required for static hosting).
 export function generateStaticParams() {
   return getAllBlogSlugs().map((slug) => ({ slug }));
 }

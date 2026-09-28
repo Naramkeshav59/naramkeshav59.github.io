@@ -1,7 +1,3 @@
-/** @type {import('tailwindcss').Config} */
-
-// Spider-Man theme: the site's `blue-*` accent classes render as suit red,
-// and `gray-*` surfaces render as the suit's midnight navy.
 const spideyRed = {
   50: '#fef2f2',
   100: '#fde3e3',
@@ -31,6 +27,7 @@ const spideyNavy = {
   950: '#050818',
 };
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',

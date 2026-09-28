@@ -40,5 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# unused create-next-app starter left inside the project
+# local scratch
 /genai-portfolio/

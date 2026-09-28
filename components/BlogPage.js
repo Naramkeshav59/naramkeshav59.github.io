@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Search, X, Calendar, Clock } from 'lucide-react';
 import { portfolioData } from '../data/portfolio-data';
 import BlogPost from './BlogPost';
@@ -10,7 +10,6 @@ export default function BlogPage({ darkMode }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedTag, setSelectedTag] = useState('All');
   const [selectedBlog, setSelectedBlog] = useState(null);
-  const [blogContent, setBlogContent] = useState(null);
 
   const categories = ['All', ...new Set(portfolioData.blogs.map(blog => blog.category))];
   const allTags = ['All', ...new Set(portfolioData.blogs.flatMap(blog => blog.tags))];
@@ -23,14 +22,6 @@ export default function BlogPage({ darkMode }) {
     
     return matchesSearch && matchesCategory && matchesTag;
   });
-
-  useEffect(() => {
-    if (selectedBlog) {
-      // In a real app, you'd fetch the markdown content here
-      // For now, we'll use the blog metadata
-      setBlogContent(selectedBlog);
-    }
-  }, [selectedBlog]);
 
   if (selectedBlog) {
     return (

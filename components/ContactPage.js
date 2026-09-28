@@ -38,46 +38,6 @@ export default function ContactPage({ darkMode }) {
             <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Connect professionally</p>
           </a>
         </div>
-
-        {/* <div className={`p-8 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
-          <h2 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            Available For
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className={`p-4 rounded ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
-                ✓ Full-time Opportunities
-              </h3>
-              <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                Open to GenAI Engineer and ML Engineer roles
-              </p>
-            </div>
-            <div className={`p-4 rounded ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
-                ✓ Consulting Projects
-              </h3>
-              <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                AI strategy and implementation consulting
-              </p>
-            </div>
-            <div className={`p-4 rounded ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
-                ✓ Research Collaborations
-              </h3>
-              <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                Joint research in multimodal AI and agents
-              </p>
-            </div>
-            <div className={`p-4 rounded ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
-                ✓ Speaking Engagements
-              </h3>
-              <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                Talks and workshops on GenAI topics
-              </p>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );

@@ -6,9 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 
-// Function to remove frontmatter
 function removeFrontmatter(markdown) {
-  // Remove YAML frontmatter (--- ... ---)
   return markdown.replace(/^---\s*\n[\s\S]*?\n---\s*\n/, '');
 }
 
@@ -20,8 +18,7 @@ export default function BlogPost({ blog, darkMode, onBack }) {
     fetch(`/content/blogs/${blog.slug}.md`)
       .then(res => res.text())
       .then(text => {
-        const cleanContent = removeFrontmatter(text);  // ← Remove frontmatter
-        setContent(cleanContent);
+        setContent(removeFrontmatter(text));
         setLoading(false);
       })
       .catch(err => {
