@@ -21,24 +21,24 @@ export default function ProjectsPage({ darkMode }) {
   return (
     <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className={`text-4xl font-bold mb-4 text-center ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-          Featured Projects
+        <h1 className={`text-4xl font-bold tracking-tight mb-4 text-center ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          Projects
         </h1>
         <p className={`text-xl mb-12 text-center ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-          Showcasing my work in GenAI, multimodal applications, and AI agents
+          Each one states the problem, what I built, and the measured result against a baseline.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {portfolioData.projects.map(project => (
             <div key={project.id} 
-              className={`p-6 rounded-lg shadow-lg transition-all cursor-pointer ${darkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:shadow-xl'}`}
+              className={`p-6 rounded-2xl border transition-colors cursor-pointer flex flex-col ${darkMode ? 'bg-gray-800 border-gray-700 hover:border-gray-600' : 'bg-white border-gray-200 hover:border-gray-300'}`}
               onClick={() => setSelectedProject(project)}>
               
-              <h3 className={`text-2xl font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-2xl font-semibold tracking-tight mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                 {project.title}
               </h3>
               
-              <p className={`mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+              <p className={`mb-4 flex-grow ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                 {project.description}
               </p>
 

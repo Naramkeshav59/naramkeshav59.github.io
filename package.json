@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^9.114.0",
-    "@react-three/fiber": "^8.17.10",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.263.1",
     "next": "^14.2.35",
@@ -18,10 +16,10 @@
     "react-dom": "^18",
     "react-markdown": "^9.1.0",
     "rehype-highlight": "^7.0.2",
-    "remark-gfm": "^4.0.1",
-    "three": "^0.169.0"
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.20",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "^14.2.35",

@@ -13,7 +13,7 @@ export default function ProjectDetail({ project, darkMode, onBack }) {
           ← Back to Projects
         </button>
 
-        <h1 className={`text-4xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+        <h1 className={`text-4xl font-bold tracking-tight mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
           {project.title}
         </h1>
 
@@ -34,21 +34,21 @@ export default function ProjectDetail({ project, darkMode, onBack }) {
 
         {project.video && (
           <div className="mb-8">
-            <video controls className="w-full rounded-lg shadow-lg">
+            <video controls preload="metadata" className="w-full rounded-2xl border border-gray-200 dark:border-gray-700">
               <source src={project.video} type="video/mp4" />
             </video>
           </div>
         )}
 
-        <div className={`p-6 rounded-lg mb-6 ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
-          <h2 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Overview</h2>
+        <div className={`p-6 rounded-2xl border mb-6 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+          <h2 className={`text-xl font-semibold tracking-tight mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Overview</h2>
           <p className={`text-lg leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
             {project.fullDescription}
           </p>
         </div>
 
-        <div className={`p-6 rounded-lg mb-6 ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
-          <h2 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Technologies Used</h2>
+        <div className={`p-6 rounded-2xl border mb-6 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+          <h2 className={`text-xl font-semibold tracking-tight mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Technologies Used</h2>
           <div className="flex flex-wrap gap-2">
             {project.techStack.map((tech, idx) => (
               <span key={idx} 
@@ -59,8 +59,8 @@ export default function ProjectDetail({ project, darkMode, onBack }) {
           </div>
         </div>
 
-        <div className={`p-6 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
-          <h2 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Key Highlights</h2>
+        <div className={`p-6 rounded-2xl border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+          <h2 className={`text-xl font-semibold tracking-tight mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Key Highlights</h2>
           <ul className={`space-y-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
             {project.highlights.map((highlight, idx) => (
               <li key={idx} className="flex items-start">

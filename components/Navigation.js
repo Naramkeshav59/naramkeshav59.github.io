@@ -20,9 +20,9 @@ export default function Navigation({ currentPage, setCurrentPage, darkMode, setD
           <div className="flex items-center">
             <button
               onClick={() => setCurrentPage('home')}
-              className={`font-comic tracking-wider text-2xl ${darkMode ? 'text-white' : 'text-gray-900'}`}
+              className={`text-lg font-semibold tracking-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}
             >
-              Portfolio
+              Keshav Naram
             </button>
           </div>
 
@@ -46,8 +46,9 @@ export default function Navigation({ currentPage, setCurrentPage, darkMode, setD
           <div className="flex items-center space-x-4">
             <button
               onClick={() => setDarkMode(!darkMode)}
+              aria-label="Toggle dark mode"
               className={`p-2 rounded-lg transition-colors ${
-                darkMode ? 'bg-gray-800 text-yellow-400 hover:bg-gray-700' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                darkMode ? 'bg-gray-800 text-gray-200 hover:bg-gray-700' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
