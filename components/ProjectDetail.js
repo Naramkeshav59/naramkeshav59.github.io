@@ -1,6 +1,6 @@
 'use client';
 
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, PlayCircle } from 'lucide-react';
 
 export default function ProjectDetail({ project, darkMode, onBack }) {
   return (
@@ -28,6 +28,13 @@ export default function ProjectDetail({ project, darkMode, onBack }) {
               className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
               <ExternalLink size={20} className="mr-2" />
               Live Demo
+            </a>
+          )}
+          {project.youtube && (
+            <a href={project.youtube} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-lg transition-colors">
+              <PlayCircle size={20} className="mr-2" />
+              Watch on YouTube
             </a>
           )}
         </div>

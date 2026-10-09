@@ -28,6 +28,7 @@ export const portfolioData = {
       github: "https://github.com/Naramkeshav59/Shuttlecast",
       demo: "",
       video: "/videos/shuttlecast-demo.mp4",
+      youtube: "https://www.youtube.com/watch?v=1QtO1wVZCtc",
       highlights: [
         "Hit-detection F1 0.87 on raw broadcast footage of a held-out match, vs 0.37 for an audio-onset baseline",
         "Evals caught the agent blaming rally winners; a prompt fix raised correct attribution from 62% to 94% (A/B with decisions held fixed)",
@@ -66,6 +67,7 @@ export const portfolioData = {
       github: "https://github.com/Naramkeshav59/finsight",
       demo: "",
       video: "/videos/finsight-demo.mp4",
+      youtube: "https://www.youtube.com/watch?v=IpwAQtVk1mU",
       highlights: [
         "Benchmarked 9 chunking × retrieval strategies on answer similarity, context relevance and latency",
         "Found cross-encoder reranking lowered answer similarity on 10-K text (≈0.79 vs ≈0.85): a web-trained reranker on formal financial filings",
