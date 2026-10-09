@@ -3,7 +3,7 @@ export const portfolioData = {
     name: "Keshav Naram",
     title: "Machine Learning Engineer",
     tagline: "I ship ML that works on real data, not just benchmarks. Models, agents, pipelines, cloud, evals, end to end.",
-    bio: "MS in Applied Machine Learning from the University of Maryland and a B.Tech in Electrical Engineering from IIT Dharwad. I own ML systems end to end: data, training, agents, evaluation, and the cloud infrastructure they ship on. I work where the data is messy and the stakes are real, and I don't call anything done until it's measured.",
+    bio: "Master of Science in Applied Machine Learning from the University of Maryland and a Bachelor of Technology from IIT Dharwad. I own ML systems end to end: data, training, agents, evaluation, and the cloud infrastructure they ship on. I work where the data is messy and the stakes are real, and I don't call anything done until it's measured.",
     email: "naramkeshav59@gmail.com",
     github: "https://github.com/Naramkeshav59",
     linkedin: "https://www.linkedin.com/in/keshav-naram-33a834285/",
