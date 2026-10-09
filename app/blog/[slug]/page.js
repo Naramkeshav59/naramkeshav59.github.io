@@ -6,14 +6,58 @@ import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { getAllBlogSlugs, getBlogBySlug } from '@/lib/markdown';
 import CopyLink from '@/components/CopyLink';
 import ThemeSync from '@/components/ThemeSync';
+import { SITE } from '@/lib/site';
+import { portfolioData } from '@/data/portfolio-data';
 
 export function generateStaticParams() {
   return getAllBlogSlugs().map((slug) => ({ slug }));
 }
 
+function excerptFor(slug, blog) {
+  const listed = portfolioData.blogs.find((b) => b.slug === slug);
+  if (listed) return listed.excerpt;
+  // fallback: first paragraph of the post
+  return blog.content.split(/\n\s*\n/).find((p) => p.trim() && !p.startsWith('#'))?.trim().slice(0, 200) ?? '';
+}
+
 export function generateMetadata({ params }) {
   const blog = getBlogBySlug(params.slug);
-  return { title: blog ? `${blog.frontmatter.title} | Keshav Naram` : 'Keshav Naram' };
+  if (!blog) return { title: 'Post not found' };
+  const { title, date, tags = [] } = blog.frontmatter;
+  const description = excerptFor(params.slug, blog);
+  const path = `/blog/${params.slug}/`;
+  return {
+    title,
+    description,
+    keywords: tags,
+    alternates: { canonical: path },
+    openGraph: {
+      type: 'article',
+      url: path,
+      title,
+      description,
+      publishedTime: date,
+      authors: [SITE.name],
+      tags,
+      images: [{ url: SITE.image, alt: SITE.name }],
+    },
+    twitter: { card: 'summary', title, description, images: [SITE.image] },
+  };
+}
+
+function postJsonLd(slug, blog) {
+  const { title, date, tags = [] } = blog.frontmatter;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description: excerptFor(slug, blog),
+    datePublished: date,
+    keywords: tags.join(', '),
+    url: `${SITE.url}/blog/${slug}/`,
+    mainEntityOfPage: `${SITE.url}/blog/${slug}/`,
+    author: { '@type': 'Person', name: SITE.name, url: SITE.url },
+  };
 }
 
 export default function BlogPostPage({ params }) {
@@ -27,6 +71,7 @@ export default function BlogPostPage({ params }) {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <ThemeSync />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd(params.slug, blog)) }} />
       <header className="fixed top-0 w-full z-50 backdrop-blur-md bg-white/90 dark:bg-gray-900/90 border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Keshav Naram</Link>
