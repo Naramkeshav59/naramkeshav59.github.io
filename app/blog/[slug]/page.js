@@ -61,7 +61,7 @@ export default function BlogPostPage({ params }) {
           <CopyLink />
         </div>
 
-        <article className="prose prose-lg prose-slate dark:prose-invert max-w-none prose-headings:tracking-tight prose-a:text-blue-700 dark:prose-a:text-blue-400 prose-table:text-base">
+        <article className="prose prose-lg prose-zinc dark:prose-invert max-w-none prose-headings:tracking-tight prose-a:text-blue-700 dark:prose-a:text-blue-400 prose-table:text-base">
           <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>
             {blog.content}
           </ReactMarkdown>

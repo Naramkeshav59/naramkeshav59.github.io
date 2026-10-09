@@ -37,7 +37,7 @@ export default function BlogPage({ darkMode }) {
       <div className="max-w-4xl mx-auto">
         <h1 className={`text-4xl font-bold tracking-tight mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Writing</h1>
         <p className={`text-lg mb-10 ${muted}`}>
-          Engineering notes from building agents, retrieval systems and fine-tuned models: what the measurements showed.
+          Explainers and comparisons on RAG, AI agents, AI security and GPU programming.
         </p>
 
         <div className="relative mb-5">

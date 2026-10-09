@@ -1,6 +1,6 @@
 const colors = require('tailwindcss/colors');
 
-// One neutral (slate) and one accent (teal). Components use `gray-*` for
+// Monochrome (zinc) with a single indigo accent. Components use `gray-*` for
 // surfaces/text and `blue-*` for the accent, so remapping both here keeps the
 // whole site on a single, deliberate palette.
 /** @type {import('tailwindcss').Config} */
@@ -14,9 +14,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gray: { ...colors.slate, 750: '#283548' },
-        blue: colors.teal,
-        green: colors.teal,
+        gray: { ...colors.zinc, 750: '#323238' },
+        blue: colors.indigo,
+        green: colors.indigo,
       },
     },
   },
