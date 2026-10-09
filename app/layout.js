@@ -27,6 +27,7 @@ export const metadata = {
     images: [SITE.image],
   },
   robots: { index: true, follow: true },
+  verification: { google: 'PZnlgS7kXsvmQvdsKM8Az1KXzGwZB3X2dbgf5ZML9Pk' },
 };
 
 // Person structured data: what Google uses for knowledge panels and to tie
